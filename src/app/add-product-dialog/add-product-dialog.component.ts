@@ -28,7 +28,17 @@ export class AddProductDialogComponent implements OnInit {
       date: ['', Validators.required],
     });
 
-    console.groupCollapsed(this.editData);
+    // console.groupCollapsed(this.editData);
+    if (this.editData) {
+      this.productForm.controls['productName'].setValue(
+        this.editData.productName
+      );
+      this.productForm.controls['category'].setValue(this.editData.category);
+      this.productForm.controls['freshness'].setValue(this.editData.freshness);
+      this.productForm.controls['price'].setValue(this.editData.price);
+      this.productForm.controls['comment'].setValue(this.editData.comment);
+      this.productForm.controls['date'].setValue(this.editData.date);
+    }
   }
 
   addProduct() {
