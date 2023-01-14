@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../services/api.service';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-product-dialog',
@@ -14,6 +14,7 @@ export class AddProductDialogComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private api: ApiService,
+    @Inject(MAT_DIALOG_DATA) public editData: any,
     private dialogref: MatDialogRef<AddProductDialogComponent>
   ) {}
 
@@ -26,6 +27,8 @@ export class AddProductDialogComponent implements OnInit {
       comment: ['', Validators.required],
       date: ['', Validators.required],
     });
+
+    console.groupCollapsed(this.editData);
   }
 
   addProduct() {
