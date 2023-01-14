@@ -2,9 +2,9 @@
   "productList": [
     {
       "productName": "Apple",
-      "category": "Fruits",
+      "category": "Vagetables",
       "freshness": "Brand New",
-      "price": 100,
+      "price": 150,
       "comment": "This is fresh Apple",
       "date": "2023-01-13T22:00:00.000Z",
       "id": 1
@@ -17,6 +17,42 @@
       "comment": "This is not fresh",
       "date": "2023-01-13T22:00:00.000Z",
       "id": 2
+    },
+    {
+      "productName": "Mango",
+      "category": "Fruits",
+      "freshness": "Second Hand",
+      "price": 550,
+      "comment": "This is not fresh",
+      "date": "2023-01-13T22:00:00.000Z",
+      "id": 3
+    },
+    {
+      "productName": "Mango",
+      "category": "Fruits",
+      "freshness": "Second Hand",
+      "price": 650,
+      "comment": "This is not fresh",
+      "date": "2023-01-13T22:00:00.000Z",
+      "id": 4
+    },
+    {
+      "productName": "Mango",
+      "category": "Electronics",
+      "freshness": "Second Hand",
+      "price": 750,
+      "comment": "This is not fresh",
+      "date": "2023-01-13T22:00:00.000Z",
+      "id": 5
+    },
+    {
+      "productName": "Banana",
+      "category": "Fruits",
+      "freshness": "Refurbished",
+      "price": 80,
+      "comment": "This is Refurbished Banana",
+      "date": "2023-01-20T22:00:00.000Z",
+      "id": 6
     }
   ],
   "comments": [

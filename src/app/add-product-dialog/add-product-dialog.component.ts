@@ -45,17 +45,34 @@ export class AddProductDialogComponent implements OnInit {
 
   addProduct() {
     // console.log(this.productForm.value);
-    if (this.productForm.valid) {
-      this.api.postProduct(this.productForm.value).subscribe({
-        next: (res) => {
-          alert('Product Added successfully');
-          this.productForm.reset();
-          this.dialogref.close('save');
-        },
-        error: () => {
-          alert('Error while adding the product');
-        },
-      });
+    if (!this.editData) {
+      if (this.productForm.valid) {
+        this.api.postProduct(this.productForm.value).subscribe({
+          next: (res) => {
+            alert('Product Added successfully');
+            this.productForm.reset();
+            this.dialogref.close('save');
+          },
+          error: () => {
+            alert('Error while adding the product!!');
+          },
+        });
+      }
+    } else {
+      this.updateProduct();
     }
+  }
+
+  updateProduct() {
+    this.api.putProduct(this.productForm.value, this.editData.id).subscribe({
+      next: (res) => {
+        alert('Product update Successfully');
+        this.productForm.reset();
+        this.dialogref.close('update');
+      },
+      error: () => {
+        alert('Error while updating the record!!');
+      },
+    });
   }
 }
