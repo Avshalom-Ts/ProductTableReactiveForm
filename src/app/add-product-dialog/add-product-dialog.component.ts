@@ -11,6 +11,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 export class AddProductDialogComponent implements OnInit {
   freshnessList = ['Brand New', 'Second Hand', 'Refurbished'];
   productForm!: FormGroup;
+  actionBtn: string = 'Save';
   constructor(
     private formBuilder: FormBuilder,
     private api: ApiService,
@@ -30,6 +31,7 @@ export class AddProductDialogComponent implements OnInit {
 
     // console.groupCollapsed(this.editData);
     if (this.editData) {
+      this.actionBtn = 'Update';
       this.productForm.controls['productName'].setValue(
         this.editData.productName
       );
