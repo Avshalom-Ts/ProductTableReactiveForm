@@ -2,7 +2,7 @@
   <h1 mat-dialog-title>Add Product</h1>
   <mat-form-field appearance="outline">
     <mat-label>Product Name</mat-label>
-    <input matInput placeholder="Placeholder">
+    <input matInput placeholder="Name">
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>Product Category</mat-label>
@@ -25,4 +25,13 @@
     <mat-radio-button class="example-radio-button" *ngFor="let fresh of freshnessList" [value]="fresh">{{fresh}}
     </mat-radio-button>
   </mat-radio-group>
+  <mat-form-field appearance="outline">
+    <mat-label>Price</mat-label>
+    <input matInput type="number" placeholder="Price">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Comment</mat-label>
+    <textarea matInput></textarea>
+  </mat-form-field>
 </div>
